@@ -42,13 +42,11 @@ def get_manga_page(url: str, driver):
     driver.get(url)
     time.sleep(1)
     page_raw = driver.page_source
-    #driver.close()
     return page_raw
 
 def get_name(url, driver):
     driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'lxml')
-    #driver.close()
     return soup.find(class_ = 'UAname').text
 
 
@@ -86,15 +84,8 @@ def get_page_img_url(ch_url, driver):
     return img_url
 def save_img(url_img, folder, file , driver):
     with open(folder+"/"+file, 'wb') as f:
-        #driver.get(url_img)
-        #res = driver.page_source
         res = requests.get(url_img).content
-        #driver.close()
         f.write(res)
-
-
-
-
 
 if __name__ == "__main__":
     main()
