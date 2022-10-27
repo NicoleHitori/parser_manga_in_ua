@@ -1,1 +1,1 @@
-# parser_manga_in_ua
+# Python парсер для завантаження манґи з сайту manga.in.us
